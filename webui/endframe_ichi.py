@@ -1856,16 +1856,16 @@ def process(input_image, prompt, n_prompt, seed, total_second_length, latent_win
     print(translate("\u25c6 バッチ処理回数: {0}回").format(batch_count))
 
     # 解像度を安全な値に丸めてログ表示
-    from diffusers_helper.bucket_tools import SAFE_RESOLUTIONS
+    #from diffusers_helper.bucket_tools import SAFE_RESOLUTIONS
 
     # 解像度値を表示
-    print(translate("\u25c6 UIから受け取った解像度値: {0}（型: {1}）").format(resolution, type(resolution).__name__))
+    #print(translate("\u25c6 UIから受け取った解像度値: {0}（型: {1}）").format(resolution, type(resolution).__name__))
 
     # 安全な値に丸める
-    if resolution not in SAFE_RESOLUTIONS:
-        closest_resolution = min(SAFE_RESOLUTIONS, key=lambda x: abs(x - resolution))
-        print(translate('安全な解像度値ではないため、{0}から{1}に自動調整しました').format(resolution, closest_resolution))
-        resolution = closest_resolution
+    #if resolution not in SAFE_RESOLUTIONS:
+    #    closest_resolution = min(SAFE_RESOLUTIONS, key=lambda x: abs(x - resolution))
+    #    print(translate('安全な解像度値ではないため、{0}から{1}に自動調整しました').format(resolution, closest_resolution))
+    #    resolution = closest_resolution
 
     # 解像度設定を出力
     print(translate('解像度を設定: {0}').format(resolution))
